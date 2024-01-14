@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+    /* gap: 5rem; */
+    height: 100%;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+}
+.logo{
+    /* aspect-ratio: 3/4; */
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+.newchat-box{
+    max-width: 90%;
+    width: 100%;
+    height: 50px;
+    background-color: #555661;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+.newchat-container{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    gap: 1rem;
+}
+.socialmedia{
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    cursor: pointer;
+}

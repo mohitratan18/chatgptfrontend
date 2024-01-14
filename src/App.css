@@ -1,0 +1,22 @@
+.app {
+  display: flex;
+  font-family: Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.partone {
+  flex: 2;
+  height: 100vh;
+  /* border-right: 1px solid white; */
+  background-color: black;
+  height: 100vh;
+}
+.parttwo {
+  flex: 8;
+}
+@media only screen and(max-width:768px) {
+  .partone{
+    /* flex: 1; */
+    display: none;
+  }
+}
