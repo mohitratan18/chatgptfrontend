@@ -10,7 +10,8 @@ const Secondpart = () => {
   const handlechange = (e) => {
     setmessage(e.target.value);
   };
-  const handleclick = async () => {
+  const handleclick = async (e) => {
+    e.preventDefault()
     try {
       setchat((prev) => {
         return [
@@ -64,7 +65,7 @@ const Secondpart = () => {
             );
           })}
         </div>
-          <div className="p2-chatbox-box">
+          <form className="p2-chatbox-box" onSubmit={handleclick}>
             <input
               type="text"
               className="p2-chatbox"
@@ -72,10 +73,10 @@ const Secondpart = () => {
               onChange={handlechange}
               value={message}
             />
-            <button type="submit" className="p2-btn" onClick={handleclick}>
+            <button type="submit" className="p2-btn" >
               <img src={send} className="p2-sendbtn" alt="" />
             </button>
-          </div>
+          </form>
       </div>
     </div>
   );
