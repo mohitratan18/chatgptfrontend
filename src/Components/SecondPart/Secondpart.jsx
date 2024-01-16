@@ -4,7 +4,7 @@ import send from "../assets/send.png";
 import ailogo from "../assets/ChatGPT-Logo.jpg";
 import humanlogo from "../assets/human.jpg";
 const Secondpart = () => {
-  const url = "http://localhost:8000/answer";
+  const url = "https://chatgpt-backend-jbbu.onrender.com/answer";
   const [message, setmessage] = useState("");
   const [chat, setchat] = useState([]);
   const handlechange = (e) => {
@@ -13,12 +13,15 @@ const Secondpart = () => {
   const handleclick = async () => {
     try {
       setchat((prev) => {
-        return [...prev,{
-          message: message,
-          flag:true
-        }]
+        return [
+          ...prev,
+          {
+            message: message,
+            flag: true,
+          },
+        ];
       });
-      var NewMsg = message
+      var NewMsg = message;
       setmessage("");
       const response = await fetch(url, {
         method: "POST",
@@ -34,10 +37,13 @@ const Secondpart = () => {
       console.log(msg);
 
       setchat((prev) => {
-        return [...prev,{
-          message: msg.message,
-          flag:false
-        }]
+        return [
+          ...prev,
+          {
+            message: msg.message,
+            flag: false,
+          },
+        ];
       });
     } catch (error) {}
   };
@@ -58,18 +64,18 @@ const Secondpart = () => {
             );
           })}
         </div>
-        <div className="p2-chatbox-box">
-          <input
-            type="text"
-            className="p2-chatbox"
-            placeholder="Message.."
-            onChange={handlechange}
-            value={message}
-          />
-          <button type="submit" className="p2-btn" onClick={handleclick}>
-            <img src={send} className="p2-sendbtn" alt="" />
-          </button>
-        </div>
+          <div className="p2-chatbox-box">
+            <input
+              type="text"
+              className="p2-chatbox"
+              placeholder="Message.."
+              onChange={handlechange}
+              value={message}
+            />
+            <button type="submit" className="p2-btn" onClick={handleclick}>
+              <img src={send} className="p2-sendbtn" alt="" />
+            </button>
+          </div>
       </div>
     </div>
   );
